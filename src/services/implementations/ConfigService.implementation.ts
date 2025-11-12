@@ -17,5 +17,9 @@ export class ViteConfigService implements ConfigService {
   getEmailPublicKey(): string | undefined {
     return import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
   }
+
+  getEmailRecipient(): string {
+    return import.meta.env.VITE_EMAILJS_TO_EMAIL ?? 'gzontinha@gmail.com';
+  }
 }
 

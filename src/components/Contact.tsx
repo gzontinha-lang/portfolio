@@ -38,7 +38,6 @@ const Contact: FC = () => {
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
-        to_email: PROFILE.socialLinks.email,
       });
 
       setSubmitStatus('success');

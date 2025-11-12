@@ -14,6 +14,7 @@ export class EmailJSService implements EmailService {
     const serviceId = this.configService.getEmailServiceId();
     const templateId = this.configService.getEmailTemplateId();
     const publicKey = this.configService.getEmailPublicKey();
+    const recipientEmail = this.configService.getEmailRecipient();
 
     if (!serviceId || !templateId || !publicKey || 
         serviceId === 'YOUR_SERVICE_ID' || 
@@ -22,10 +23,15 @@ export class EmailJSService implements EmailService {
       throw new Error('EmailJS não está configurado. Por favor, configure o arquivo .env com suas credenciais do EmailJS.');
     }
 
+    const payload = {
+      ...data,
+      to_email: recipientEmail,
+    };
+
     await emailjs.send(
       serviceId,
       templateId,
-      data,
+      payload,
       publicKey
     );
   }

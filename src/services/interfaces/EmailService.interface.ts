@@ -7,8 +7,8 @@ export interface EmailData {
   from_name: string;
   from_email: string;
   message: string;
-  to_email: string;
-  [key: string]: string;
+  to_email?: string;
+  [key: string]: string | undefined;
 }
 
 export interface EmailService {

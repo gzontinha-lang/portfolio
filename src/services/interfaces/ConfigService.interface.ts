@@ -7,5 +7,6 @@ export interface ConfigService {
   getEmailServiceId(): string | undefined;
   getEmailTemplateId(): string | undefined;
   getEmailPublicKey(): string | undefined;
+  getEmailRecipient(): string;
 }
 
