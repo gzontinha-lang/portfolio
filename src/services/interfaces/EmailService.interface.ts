@@ -8,6 +8,7 @@ export interface EmailData {
   from_email: string;
   message: string;
   to_email: string;
+  [key: string]: string;
 }
 
 export interface EmailService {
